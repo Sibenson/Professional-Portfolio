@@ -143,11 +143,11 @@ export default function CharacterCanvas({ url, active, reducedMotion, compact, w
       }}
       aria-hidden
     >
-      {/* Warm key, cool fill, ember rim — matches the site palette */}
-      <hemisphereLight args={["#fff4ea", "#2a2320", 1.1]} />
+      {/* Warm key, neutral fill, gold rim — matches the Black & Gold palette */}
+      <hemisphereLight args={["#fff8ea", "#1a1712", 1.1]} />
       <directionalLight position={[-2.5, 3, 3]} intensity={2.2} color="#fff1e6" />
-      <directionalLight position={[3, 1.5, -2.5]} intensity={3} color="#ff6a3d" />
-      <directionalLight position={[2, -1, 3]} intensity={0.6} color="#b9c6ff" />
+      <directionalLight position={[3, 1.5, -2.5]} intensity={3} color="#e5b842" />
+      <directionalLight position={[2, -1, 3]} intensity={0.5} color="#f3f4f6" />
       <LoadBoundary onError={onError}>
         <Suspense fallback={null}>
           {url ? (

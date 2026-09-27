@@ -42,7 +42,7 @@ function Case({ study, index }: { study: CaseStudy; index: number }) {
                 </span>
                 <div>
                   <h4 className={`font-mono text-[12px] uppercase tracking-[0.1em] ${last ? "text-pass" : "text-text"}`}>{step.label}</h4>
-                  <p className="mt-1 text-[15px] leading-relaxed text-muted">{step.detail}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed text-text/85">{step.detail}</p>
                 </div>
               </li>
             );

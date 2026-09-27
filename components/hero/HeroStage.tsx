@@ -113,7 +113,7 @@ export default function HeroStage({ hasModel, hasPoster }: Props) {
     >
       {/* Stage: halo + orbit rings + floor shadow */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[46%] aspect-square w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--glow)_0%,transparent_65%)]" />
+        <div className="absolute left-1/2 top-[46%] aspect-square w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(229,184,66,0.06)_0%,rgba(10,10,12,0)_70%)]" />
         <svg viewBox="0 0 400 400" className="absolute left-1/2 top-[46%] w-[92%] -translate-x-1/2 -translate-y-1/2 text-line-strong">
           <circle cx="200" cy="200" r="198" fill="none" stroke="currentColor" strokeOpacity="0.55" strokeDasharray="2 6" />
           <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" strokeOpacity="0.35" />

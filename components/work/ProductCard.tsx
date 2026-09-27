@@ -28,7 +28,7 @@ export default function ProductCard({ product, index }: { product: Product; inde
   return (
     <article
       aria-labelledby={headingId}
-      className="group relative flex h-full flex-col rounded-[28px] border border-line bg-surface p-2.5 transition-[border-color,transform,box-shadow] duration-500 ease-out-soft hover:-translate-y-1 hover:border-line-strong hover:shadow-[var(--shadow)] motion-reduce:hover:translate-y-0"
+      className="group relative flex h-full flex-col rounded-[28px] border border-line bg-surface p-2.5 transition-[border-color,transform,box-shadow] duration-500 ease-out-soft hover:-translate-y-1 hover:border-gold-deep hover:shadow-[var(--shadow)] motion-reduce:hover:translate-y-0"
     >
       {/* Browser window preview */}
       <div className="relative overflow-hidden rounded-[20px] border border-line bg-bg-2">
@@ -65,9 +65,20 @@ export default function ProductCard({ product, index }: { product: Product; inde
       </div>
 
       {/* Logo overlapping the frame edge */}
-      <div className="relative z-10 -mt-7 ml-5 grid h-14 w-14 place-items-center overflow-hidden rounded-2xl border border-line-strong bg-surface shadow-[var(--shadow)]">
+      <div
+        className={`relative z-10 -mt-7 ml-5 grid h-14 w-14 place-items-center overflow-hidden rounded-2xl border shadow-[var(--shadow)] ${
+          product.logo ? "border-black/10 bg-[#f7f4ee]" : "border-line-strong bg-surface"
+        }`}
+      >
         {product.logo ? (
-          <Image src={product.logo} alt={`${product.name} logo`} width={40} height={40} className="h-10 w-10 object-contain" />
+          <Image
+            src={product.logo}
+            alt={`${product.name} logo`}
+            width={40}
+            height={40}
+            unoptimized={product.logo.endsWith(".svg")}
+            className="h-9 w-9 object-contain"
+          />
         ) : (
           <span aria-hidden className="text-[15px] font-bold tracking-tight">
             {initials(product.name)}
@@ -129,7 +140,7 @@ export default function ProductCard({ product, index }: { product: Product; inde
               href={product.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group/link inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full bg-text px-5 text-[14px] font-medium text-bg transition-colors duration-300 hover:bg-accent hover:text-accent-ink"
+              className="group/link inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full px-5 text-[14px] font-medium bg-accent text-accent-ink transition-[background-color,box-shadow,color] duration-300 hover:bg-accent-hover hover:glow-gold"
             >
               Visit Website
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />

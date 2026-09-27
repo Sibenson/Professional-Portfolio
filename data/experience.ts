@@ -80,12 +80,10 @@ export const roles: Role[] = [
 
 /**
  * Headline figures. Honest approximations — keep the ranges rather than rounding up.
- * NOTE: your CV says you collaborate with 8–11 developers overall; 5–6 is the
- * figure you gave for developers you coordinate with day to day. Adjust if needed.
  */
 export const metrics = [
   { value: "1+", unit: "year", label: "Hands-on QA experience" },
   { value: "7–10", unit: "", label: "Applications & projects tested" },
-  { value: "5–6", unit: "", label: "Frontend & backend developers coordinated with" },
+  { value: "8–11", unit: "", label: "Frontend & backend developers coordinated with" },
   { value: "3–5", unit: "", label: "Production releases supported" },
 ];

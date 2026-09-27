@@ -80,9 +80,9 @@ export default function Navbar({ hasResume }: { hasResume: boolean }) {
           }`}
         >
           <a href="#home" className="flex items-center gap-2.5 rounded-full pr-3" onClick={() => setOpen(false)}>
-            <span className="relative grid h-9 w-9 place-items-center rounded-full bg-text text-[13px] font-bold tracking-tight text-bg">
+            <span className="relative grid h-9 w-9 place-items-center rounded-full bg-accent text-[13px] font-bold tracking-tight text-accent-ink">
               SG
-              <span aria-hidden className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-bg bg-accent" />
+              <span aria-hidden className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-bg bg-text" />
             </span>
             <span className="hidden text-[15px] font-semibold tracking-tight sm:inline">{site.name}</span>
           </a>
@@ -91,7 +91,7 @@ export default function Navbar({ hasResume }: { hasResume: boolean }) {
             {marker && (
               <span
                 aria-hidden
-                className="absolute top-1/2 h-9 -translate-y-1/2 rounded-full bg-surface-2 transition-[left,width] duration-500 ease-out-soft"
+                className="absolute top-1/2 h-9 -translate-y-1/2 rounded-full border border-gold-deep/40 bg-surface-2 transition-[left,width] duration-500 ease-out-soft"
                 style={{ left: marker.left, width: marker.width }}
               />
             )}
@@ -105,7 +105,7 @@ export default function Navbar({ hasResume }: { hasResume: boolean }) {
                     data-id={id}
                     aria-current={isActive ? "location" : undefined}
                     className={`relative z-10 block rounded-full px-4 py-2 text-[14px] transition-colors duration-300 ${
-                      isActive ? "text-text" : "text-muted hover:text-text"
+                      isActive ? "text-accent-text" : "text-muted hover:text-text"
                     }`}
                   >
                     {item.label}
@@ -122,7 +122,7 @@ export default function Navbar({ hasResume }: { hasResume: boolean }) {
                 href={site.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden h-10 items-center gap-1.5 rounded-full bg-text px-4 text-[14px] font-medium text-bg transition-colors hover:bg-accent hover:text-accent-ink sm:inline-flex"
+                className="hidden h-10 items-center gap-1.5 rounded-full px-4 text-[14px] font-medium sm:inline-flex bg-accent text-accent-ink transition-[background-color,box-shadow,color] duration-300 hover:bg-accent-hover hover:glow-gold"
               >
                 Resume <ArrowUpRight className="h-3.5 w-3.5" />
                 <span className="sr-only">(opens in a new tab)</span>
@@ -179,7 +179,7 @@ export default function Navbar({ hasResume }: { hasResume: boolean }) {
                 href={site.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-12 items-center justify-center rounded-full bg-text font-medium text-bg"
+                className="flex h-12 items-center justify-center rounded-full font-medium bg-accent text-accent-ink transition-[background-color,box-shadow,color] duration-300 hover:bg-accent-hover hover:glow-gold"
               >
                 Resume
                 <span className="sr-only"> (opens in a new tab)</span>

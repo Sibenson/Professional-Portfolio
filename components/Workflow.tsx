@@ -137,12 +137,12 @@ export default function Workflow() {
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <p className="flex items-center gap-3 text-[15px]">
                   <span className="eyebrow">Output</span>
-                  <span className="rounded-full bg-text px-3 py-1 text-[13px] font-medium text-bg">{step.output}</span>
+                  <span className="rounded-full border border-gold-deep bg-accent/10 px-3 py-1 text-[13px] font-medium text-accent-text">{step.output}</span>
                 </p>
                 <button
                   type="button"
                   onClick={() => setActive((active + 1) % workflow.length)}
-                  className="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-4 text-[14px] transition-colors hover:border-text"
+                  className="inline-flex h-11 items-center gap-2 rounded-full border border-gold-deep/70 px-4 text-[14px] transition-[border-color,color,box-shadow] duration-300 hover:border-accent hover:text-accent-text hover:glow-gold-soft"
                 >
                   {active === workflow.length - 1 ? "Start over" : `Next: ${workflow[active + 1].title}`}
                   <ArrowRight className="h-4 w-4" />

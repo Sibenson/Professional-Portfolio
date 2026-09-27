@@ -1,6 +1,6 @@
 /**
  * ───────────────────────────────────────────────────────────────
- *  FEATURED WORK — real products you've worked on (as QA / PM + QA).
+ *  FEATURED WORK — real projects you've worked on (as QA / PM + QA).
  *
  *  These are products you TESTED and COORDINATED, not products you built.
  *
@@ -46,15 +46,15 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "Sailracing",
-    name: "Sailracing", // TODO: replace with the real product name
+    name: "Sailracing",
     description:
-      "Sailracing is a Swedish apparel brand founded in 1977 and re-launched in 1999 that specializes in innovative, high-technical gear, outerwear, and sportswear for high-speed sailing and extreme weather conditions. They supply elite racing teams in major competitions like SailGP and the America's Cup.", // TODO: describe the real product
+      "Sailracing is a Swedish apparel brand founded in 1977 and re-launched in 1999 that specializes in innovative, high-technical gear, outerwear, and sportswear for high-speed sailing and extreme weather conditions. They supply elite racing teams in major competitions like SailGP and the America's Cup.",
     status: "Production e-commerce platform",
     metric: null,
-    url: "https://sailracing.com/se/en", // TODO: add the exact public URL
-    screenshot: "", // TODO: e.g. "/images/work/b2b-commerce.webp"
-    screenshotAlt: "Sailracing",
-    logo: "",
+    url: "https://sailracing.com/se/en",
+    screenshot: "/images/work/sailracing.jpg",
+    screenshotAlt: "Sailracing online store homepage",
+    logo: "/images/work/sailracing-icon.svg",
     role: "QA / PM + QA", // TODO: confirm your role on this product
     context: "Hazesoft client project",
     workedOn: ["Catalog & pricing rules" /* TODO: confirm per product */, "Cart & checkout", "Regression", "API testing", "UAT", "Production verification"],
@@ -63,15 +63,15 @@ export const products: Product[] = [
   },
   {
     id: "Dogman",
-    name: "Dogman", // TODO: replace with the real product name
+    name: "Dogman",
     description:
-      "Dogman AB is the leading pet products brand and company in Sweden, firmly holding the top position in the market.", // TODO: describe the real product
+      "Dogman AB is the leading pet products brand and company in Sweden, firmly holding the top position in the market.",
     status: "Customer-facing e-commerce platform",
     metric: null,
-    url: "https://dogman.se", // TODO: add the exact public URL
-    screenshot: "", // TODO: e.g. "/images/work/b2c-store.webp"
-    screenshotAlt: "Dogman e-commerce platform",
-    logo: "",
+    url: "https://dogman.se",
+    screenshot: "/images/work/dogman.jpg",
+    screenshotAlt: "Dogman online store homepage",
+    logo: "/images/work/dogman-icon.png",
     role: "QA", // TODO: confirm your role on this product
     context: "Hazesoft client project",
     workedOn: ["Product pages (PLP / PDP)", "Wishlist", "Checkout", "Payment gateway flows", "Functional", "E2E"],
@@ -85,10 +85,10 @@ export const products: Product[] = [
       "A single control plane for your WordPress site: SFTP, database, domains, SSL and backup in one console. Plus the server-level controls other Swedish hosts keep behind a support ticket.",
     status: "Cloud platform · API testing",
     metric: null,
-    url: "https://celestiocloud.com/", // TODO: add the public URL if it can be shared
-    screenshot: "",
-    screenshotAlt: "Celestio cloud platform",
-    logo: "",
+    url: "https://celestiocloud.com/",
+    screenshot: "/images/work/celestio.jpg",
+    screenshotAlt: "Celestio managed WordPress hosting homepage",
+    logo: "/images/work/celestio-icon.png",
     role: "QA · API testing",
     context: "Hazesoft client project",
     workedOn: ["REST APIs", "Authentication", "Authorization", "Permissions", "Error handling", "Negative testing"],

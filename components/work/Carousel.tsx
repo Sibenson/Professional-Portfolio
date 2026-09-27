@@ -72,7 +72,7 @@ export default function Carousel({ label, children }: { label: string; children:
 
   const controlsNeeded = pages > 1;
   const btn =
-    "grid h-12 w-12 place-items-center rounded-full border border-line-strong text-text transition-[background-color,border-color,color,opacity] duration-300 hover:border-text hover:bg-text hover:text-bg disabled:pointer-events-none disabled:opacity-30";
+    "grid h-12 w-12 place-items-center rounded-full border border-line-strong text-text transition-[background-color,border-color,color,opacity] duration-300 hover:border-accent hover:bg-accent hover:text-accent-ink hover:glow-gold disabled:pointer-events-none disabled:opacity-30";
 
   return (
     <div role="region" aria-roledescription="carousel" aria-label={label} onKeyDown={onKeyDown}>

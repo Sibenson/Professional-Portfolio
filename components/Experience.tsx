@@ -63,7 +63,7 @@ export default function Experience() {
 
                 <ul
                   className={`mt-6 grid gap-x-6 gap-y-2 text-[14px] ${
-                    role.current ? "rounded-2xl border border-line-strong bg-surface p-5 sm:grid-cols-2" : ""
+                    role.current ? "rounded-2xl border border-gold-deep bg-surface p-5 sm:grid-cols-2" : ""
                   }`}
                 >
                   {role.focus.map((f) => (

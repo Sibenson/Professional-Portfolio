@@ -113,7 +113,7 @@ export default function Contact() {
               href={`mailto:${site.contact.email}`}
               className="group mt-8 inline-flex max-w-full items-center gap-3 text-[clamp(1.25rem,2.6vw,1.9rem)] font-semibold tracking-[-0.02em]"
             >
-              <span className="break-all underline decoration-line-strong decoration-1 underline-offset-[6px] transition-colors group-hover:decoration-accent">
+              <span className="break-all underline decoration-gold-deep decoration-1 underline-offset-[6px] transition-colors group-hover:decoration-accent group-hover:text-accent-text">
                 {site.contact.email}
               </span>
               <ArrowUpRight className="h-6 w-6 shrink-0 text-accent-text transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -190,7 +190,7 @@ export default function Contact() {
                 type="submit"
                 disabled={sending}
                 aria-disabled={sending}
-                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-text px-7 font-medium text-bg transition-colors duration-300 hover:bg-accent hover:text-accent-ink disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-7 font-medium disabled:cursor-not-allowed disabled:opacity-60 bg-accent text-accent-ink transition-[background-color,box-shadow,color] duration-300 hover:bg-accent-hover hover:glow-gold"
               >
                 {sending && (
                   <svg aria-hidden className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">

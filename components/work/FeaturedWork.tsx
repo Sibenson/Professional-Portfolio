@@ -15,13 +15,13 @@ export default function FeaturedWork() {
           eyebrow="Selected work"
           title={
             <>
-              Products I&apos;ve <em>worked</em> on
+              Projects I&apos;ve <em>worked</em> on
             </>
           }
-          intro="Real, production software — tested and coordinated as QA and PM + QA at Hazesoft. I didn't build these products; I helped make sure they work."
+          intro="Real, production software — tested and coordinated as QA and PM + QA at Hazesoft. I didn't build these projects; I helped make sure they work."
         />
         <div className="reveal mt-14 md:mt-20">
-          <Carousel label="Products I've worked on">
+          <Carousel label="Projects I've worked on">
             {products.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}

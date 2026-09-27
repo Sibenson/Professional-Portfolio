@@ -54,15 +54,18 @@ export const site = {
     },
     /** Built-in character appearance — adjust to look like you (see README "Make it look like you"). */
     look: {
-      skin: "#c98e66",
-      hair: "#1c1512",
-      jacket: "#2a2b31", // open overshirt / jacket
-      shirt: "#efe9df", // tee underneath
-      pants: "#3a4152", // chinos
-      shoes: "#f4f1ea", // sneakers (accent sole)
-      glasses: false,
-      beard: "none" as "none" | "stubble",
-      badge: "PM + QA", // lanyard ID
+      skin: "#d09a72",
+      hair: "#241810", // hair, brows and beard (very dark brown)
+      shirt: "#141417", // black short-sleeve button shirt
+      pants: "#8fa6bf", // light-wash cargo jeans
+      shoes: "#f4f1ea", // white sneakers (gold sole)
+      glasses: true,
+      glassesFrame: "#d6b35a", // thin metal frames
+      beard: "full" as "none" | "stubble" | "full",
+      chain: true,
+      watch: true,
+      lanyard: true, // PM + QA badge
+      badge: "PM + QA",
     },
   },
 } as const;

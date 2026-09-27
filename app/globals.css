@@ -1,51 +1,59 @@
 @import "tailwindcss";
 
 /* ── Design tokens ─────────────────────────────────────────────
-   Warm charcoal + paper, one ember accent, a QA "pass" green for
-   status only. Colours are CSS variables so the theme toggle only
-   swaps variables; components never need dark: variants.        */
+   "Black & Gold": matte ink-black canvas, dark gray surfaces,
+   off-white text, vibrant gold for actions, deeper gold for
+   borders. QA states stay in-palette: gold = pass, amber-rust =
+   bugs/errors. Components only reference these variables.       */
 :root,
 :root[data-theme="dark"] {
-  --bg: #0b0b0c;
-  --bg-2: #101012;
-  --surface: #141416;
-  --surface-2: #1b1b1e;
-  --line: #242427;
-  --line-strong: #36363b;
-  --text: #f2efe9;
-  --muted: #a29e96;
-  --faint: #6f6c66;
-  --accent: #ff6a3d;
-  --accent-text: #ff8a64;
-  --accent-ink: #160904;
-  --pass: #7ed6a5;
-  --flag: #e8b95b;
-  --danger: #f28b82;
-  --grid: rgba(242, 239, 233, 0.045);
-  --glow: rgba(255, 106, 61, 0.16);
-  --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+  --bg: #0a0a0c;          /* canvas */
+  --bg-2: #0e0e11;        /* alternate section band */
+  --surface: #16161a;     /* cards / containers */
+  --surface-2: #1e1e23;   /* chips, inputs, raised areas */
+  --line: #2e2819;        /* hairline divider — #a88326 mixed into the surface */
+  --line-strong: #6b5421; /* visible outline — deeper gold */
+  --gold-deep: #a88326;   /* border accent */
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --faint: #6b7280;
+  --accent: #e5b842;      /* primary CTA / highlight */
+  --accent-hover: #f0c85a;
+  --accent-text: #e5b842;
+  --accent-ink: #0a0a0c;
+  --pass: #d4b25a;        /* success = gold */
+  --flag: #b8a582;        /* in progress = desaturated sand */
+  --danger: #c7703f;      /* bugs / errors = soft amber-rust */
+  --grid: rgba(229, 184, 66, 0.035);
+  --glow: rgba(229, 184, 66, 0.06);
+  --glow-strong: rgba(229, 184, 66, 0.4);
+  --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
   color-scheme: dark;
 }
 
+/* Light variant keeps the same identity: paper + deep gold. */
 :root[data-theme="light"] {
-  --bg: #f4f1ea;
-  --bg-2: #efebe2;
-  --surface: #fbfaf6;
-  --surface-2: #ebe7de;
-  --line: #ddd7cb;
-  --line-strong: #c4bdae;
-  --text: #151412;
-  --muted: #5d5950;
-  --faint: #8b867b;
-  --accent: #d9481a;
-  --accent-text: #b33a12;
+  --bg: #f6f3ec;
+  --bg-2: #efeadf;
+  --surface: #fcfaf5;
+  --surface-2: #ece5d6;
+  --line: #e0d5bb;
+  --line-strong: #c3a765;
+  --gold-deep: #a88326;
+  --text: #141416;
+  --muted: #55565c;
+  --faint: #8a8578;
+  --accent: #a88326;
+  --accent-hover: #bf952c;
+  --accent-text: #86661b;
   --accent-ink: #ffffff;
-  --pass: #1d7a4b;
-  --flag: #8f5c00;
-  --danger: #b3261e;
-  --grid: rgba(21, 20, 18, 0.05);
-  --glow: rgba(217, 72, 26, 0.12);
-  --shadow: 0 30px 70px -35px rgba(40, 30, 10, 0.35);
+  --pass: #86661b;
+  --flag: #7a6a4a;
+  --danger: #a4501f;
+  --grid: rgba(168, 131, 38, 0.06);
+  --glow: rgba(168, 131, 38, 0.1);
+  --glow-strong: rgba(168, 131, 38, 0.35);
+  --shadow: 0 30px 70px -35px rgba(60, 45, 10, 0.3);
   color-scheme: light;
 }
 
@@ -60,6 +68,8 @@
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-gold-deep: var(--gold-deep);
   --color-accent-text: var(--accent-text);
   --color-accent-ink: var(--accent-ink);
   --color-pass: var(--pass);
@@ -71,6 +81,14 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Gold glow for interactive hover states */
+@utility glow-gold {
+  box-shadow: 0 0 0 1px var(--accent), 0 10px 32px -8px var(--glow-strong);
+}
+@utility glow-gold-soft {
+  box-shadow: 0 8px 28px -10px var(--glow-strong);
 }
 
 html {

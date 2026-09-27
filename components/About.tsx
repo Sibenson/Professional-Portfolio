@@ -1,5 +1,5 @@
 import { metrics } from "@/data/experience";
-import { courses, education } from "@/data/education";
+import { education } from "@/data/education";
 import SectionHeading from "./ui/SectionHeading";
 
 const principles = [
@@ -27,7 +27,7 @@ export default function About() {
         />
 
         <div className="mt-14 grid gap-14 lg:mt-20 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
-          <div className="reveal space-y-6 text-lg leading-relaxed text-muted md:text-[1.2rem]">
+          <div className="reveal space-y-6 text-lg leading-relaxed text-text/85 md:text-[1.2rem]">
             <p className="text-[1.4rem] leading-snug text-text md:text-[1.75rem] md:leading-[1.3]">
               I started at Hazesoft as a QA Trainee and grew into a hybrid PM + QA role. Testing is still at the centre
               of what I do — I&apos;ve added the work of getting it delivered.
@@ -85,13 +85,6 @@ export default function About() {
               <span className="eyebrow mr-3">Education</span>
               <span className="font-medium">{e.title}</span>
               <span className="text-muted"> · {e.org} · {e.period}</span>
-            </p>
-          ))}
-          {courses.map((c) => (
-            <p key={c.org}>
-              <span className="eyebrow mr-3">Course</span>
-              <span className="font-medium">{c.org}</span>
-              <span className="text-muted"> · {c.title}</span>
             </p>
           ))}
         </div>
