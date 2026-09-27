@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────────
+   Warm charcoal + paper, one ember accent, a QA "pass" green for
+   status only. Colours are CSS variables so the theme toggle only
+   swaps variables; components never need dark: variants.        */
+:root,
+:root[data-theme="dark"] {
+  --bg: #0b0b0c;
+  --bg-2: #101012;
+  --surface: #141416;
+  --surface-2: #1b1b1e;
+  --line: #242427;
+  --line-strong: #36363b;
+  --text: #f2efe9;
+  --muted: #a29e96;
+  --faint: #6f6c66;
+  --accent: #ff6a3d;
+  --accent-text: #ff8a64;
+  --accent-ink: #160904;
+  --pass: #7ed6a5;
+  --flag: #e8b95b;
+  --danger: #f28b82;
+  --grid: rgba(242, 239, 233, 0.045);
+  --glow: rgba(255, 106, 61, 0.16);
+  --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f1ea;
+  --bg-2: #efebe2;
+  --surface: #fbfaf6;
+  --surface-2: #ebe7de;
+  --line: #ddd7cb;
+  --line-strong: #c4bdae;
+  --text: #151412;
+  --muted: #5d5950;
+  --faint: #8b867b;
+  --accent: #d9481a;
+  --accent-text: #b33a12;
+  --accent-ink: #ffffff;
+  --pass: #1d7a4b;
+  --flag: #8f5c00;
+  --danger: #b3261e;
+  --grid: rgba(21, 20, 18, 0.05);
+  --glow: rgba(217, 72, 26, 0.12);
+  --shadow: 0 30px 70px -35px rgba(40, 30, 10, 0.35);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-ink: var(--accent-ink);
+  --color-pass: var(--pass);
+  --color-flag: var(--flag);
+  --color-danger: var(--danger);
+
+  --font-sans: "Schibsted Grotesk Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* floating navbar offset */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Visible, consistent keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ── Layout ───────────────────────────────────────────────── */
+.container-x {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* ── Type ─────────────────────────────────────────────────── */
+.display {
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+/* Headings: wrap a word in <em> for the editorial serif accent */
+h1 em, h2 em, h3 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Texture ──────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.mask-fade {
+  mask-image: radial-gradient(ellipse 75% 65% at 60% 45%, #000 20%, transparent 78%);
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hide native scrollbar on the carousel track (still scrollable/swipeable) */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Motion ───────────────────────────────────────────────────
+   One language: fade + short rise, 700ms, soft ease-out.
+   Content is only hidden when JS is running (html.js), so it
+   never disappears if scripts fail.                             */
+.js .reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 700ms var(--ease-out-soft),
+    transform 700ms var(--ease-out-soft);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+.float {
+  animation: float-y 7s ease-in-out infinite;
+  animation-delay: calc(var(--d, 0) * -1.6s);
+}
+
+@keyframes tick-in {
+  from { transform: scale(0.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.tick {
+  animation: tick-in 380ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+  animation-delay: calc(var(--i, 0) * 240ms + 700ms);
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pass) 55%, transparent); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+.pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* Timeline rail fill, driven by --progress (0–1) */
+.rail-fill {
+  transform-origin: top;
+  transform: scaleY(var(--progress, 0));
+  transition: transform 200ms linear;
+}
+@media (min-width: 1024px) {
+  .rail-fill-x {
+    transform-origin: left;
+    transform: scaleX(var(--progress, 0));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .float, .pulse-dot { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
